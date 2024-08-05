@@ -1,0 +1,59 @@
+package com.techlabs.behavioural.observer.test;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.techlabs.behavioural.observer.model.Account;
+import com.techlabs.behavioural.observer.model.EmailNotifier;
+import com.techlabs.behavioural.observer.model.INotifier;
+import com.techlabs.behavioural.observer.model.InsufficientFundsException;
+import com.techlabs.behavioural.observer.model.WhatsappNotifier;
+
+public class AccountNotifierTest {
+	public static void main(String[] args) {
+		Account account = new Account(1,"Vedshree", 15000, null);
+		Scanner scanner = new Scanner(System.in);
+		while(true) {
+			System.out.println("Choose Operation\n1.Deposit\n2.Withdraw\n3.Get Notification");
+			int choice = scanner.nextInt();
+			
+			switch(choice){
+			case 1:System.out.println("Enter amount:");
+			        
+					double amount1 = scanner.nextDouble();
+					account.deposit(amount1);
+					System.out.println(account);
+					for (INotifier notifier : account.getNotifier()) {
+						notifier.notification(account);
+						
+					}
+					break;
+			        
+			        
+			
+			case 2: System.out.println("Enter amount:");
+					try {
+					double amount2 = scanner.nextDouble();
+					account.withdraw(amount2);
+					break;
+					}
+					catch(InsufficientFundsException exception){
+						System.out.println(exception.getMessage());	
+					}
+					
+					break;
+			case 3:System.out.println("Do you want notification?\n1.Yes\2.NO");
+			       int choice1 = scanner.nextInt();
+			       switch(choice1){
+			       case 1: System.out.println("Email");
+			               account.setNotifier(List.of(new EmailNotifier()));
+			    	   
+			       }
+			       
+			case 4: System.exit(0);
+			default:System.out.println("Choose valid operation");
+			}
+			}
+	}
+
+}

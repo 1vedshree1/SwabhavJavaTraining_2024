@@ -1,0 +1,40 @@
+package com.techlabs.test;
+
+import java.util.List;
+
+import com.techlabs.model.Builder;
+import com.techlabs.model.Guitar;
+import com.techlabs.model.GuitarSpec;
+import com.techlabs.model.Inventory;
+import com.techlabs.model.Type;
+import com.techlabs.model.Wood;
+
+public class FindGuitarTester {
+
+	public static void main(String[] args) {
+		Inventory inventory = new Inventory();
+		GuitarSpec spec1 = new GuitarSpec(Builder.FENDER, "Stratocaster", Type.ACOUSTIC, 6,Wood.INDIAN_ROSEWOOD,Wood.INDIAN_ROSEWOOD);
+		GuitarSpec spec2 = new GuitarSpec(Builder.FENDER, "Stratocaster", Type.ACOUSTIC, 7,Wood.ALDER,Wood.INDIAN_ROSEWOOD);
+		GuitarSpec spec3 = new GuitarSpec(Builder.FENDER, "Stratocaster", Type.ACOUSTIC, 8,Wood.INDIAN_ROSEWOOD,Wood.INDIAN_ROSEWOOD);
+        
+        inventory.addGuitars("12345", 1500.00, spec1);
+        inventory.addGuitars("67890", 2000.00, spec2);
+        inventory.addGuitars("11223", 1200.00, spec3);
+		
+        GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "stratocaster",Type.ACOUSTIC, 6,Wood.INDIAN_ROSEWOOD,Wood.INDIAN_ROSEWOOD);
+        List guitar =  inventory.search(whatErinLikes);
+        if(guitar != null) {
+        	System.out.println("Ering, you might like this "
+        
+        );
+        }
+        else {
+        	System.out.println("Sorry Erin. We have nothing for you.");
+        }
+	}
+
+	private static void initializeInventory(Inventory inventory) {
+		// TODO Auto-generated method stub
+		System.out.println();
+	}
+}

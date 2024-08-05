@@ -1,0 +1,6 @@
+package com.techlabs.behavioural.strategy.model;
+
+public interface IOperation {
+	public void doOperation(int a, int b);
+
+}

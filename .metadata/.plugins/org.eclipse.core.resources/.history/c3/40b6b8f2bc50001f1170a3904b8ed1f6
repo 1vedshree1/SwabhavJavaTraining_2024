@@ -1,0 +1,25 @@
+package com.techlabs.behavioural.state.model;
+
+public class Ordered implements IPacketState{
+
+	@Override
+	public void next() {
+		System.out.println("Packet is going to dispatch");
+	}
+
+	@Override
+	public void previous() {
+		System.out.println("Packet is already in orderd state");
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void current() {
+		System.out.println("Packet is in Ordered State");
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

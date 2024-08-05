@@ -1,0 +1,20 @@
+package com.techlabs.structural.adapter.model;
+
+import com.techlabs.structural.decorator.model.CarServiceDecorator;
+import com.techlabs.structural.decorator.model.ICarService;
+
+public class WheelAlign extends CarServiceDecorator{
+
+	public WheelAlign(ICarService car) {
+		super(car);
+		// TODO Auto-generated constructor stub
+	}
+    
+	
+	@Override
+	public double getCost() {
+		// TODO Auto-generated method stub
+		return 400;
+	}
+
+}

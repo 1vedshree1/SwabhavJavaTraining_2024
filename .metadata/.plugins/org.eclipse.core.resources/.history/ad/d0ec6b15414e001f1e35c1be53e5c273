@@ -1,0 +1,11 @@
+package com.techlabs.dip.solution.test;
+
+import com.techlabs.dip.solution.model.TaxCalculator;
+
+public class TaxCalculatorTest {
+	public static void main(String[] args) {
+		TaxCalculator tax = new TaxCalculator(15000, 0);
+		tax.calculateTax();
+	}
+
+}

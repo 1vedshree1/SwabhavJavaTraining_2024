@@ -1,0 +1,12 @@
+package com.techlabs.structural.facade.model;
+
+public class Projector {
+	
+	private void on() {
+		System.out.println("Projector is on");
+	}
+	public void off() {
+		System.out.println("projector is off");
+	}
+
+}

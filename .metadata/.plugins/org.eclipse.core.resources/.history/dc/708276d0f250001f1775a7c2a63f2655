@@ -1,0 +1,12 @@
+package com.techlabs.behavioural.observer.model;
+
+public class SMSNotifier implements INotifier{
+
+	@Override
+	public void notification(Account account) {
+		System.out.println("SMS notifier");
+		
+		
+	}
+
+}

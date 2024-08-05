@@ -1,0 +1,32 @@
+package com.techlabs.structural.proxy.model;
+
+public class RealImage implements IImage{
+	
+	private String filename;
+
+	public RealImage(String filename) {
+		super();
+		this.setFilename(filename);
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	@Override
+	public void display() {
+		System.out.println("Displaying "+filename);
+		
+	}
+	public void loadFromDisk(String filename)
+	{
+		System.out.println("Loading "+filename);
+		
+	}
+	
+
+}

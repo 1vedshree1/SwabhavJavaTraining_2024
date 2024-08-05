@@ -1,0 +1,47 @@
+package com.techlabs.structural.decorator.test;
+
+import java.util.Scanner;
+import com.techlabs.structural.decorator.model.*;
+public class HatDecoratorTest {
+	
+	public static IHat main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		choiceHat(scanner);
+		
+		
+		System.out.println("Do you want following Decorator on it?");
+		System.out.println("1.Golden Hat\n2.Ribboned Hat\n3.No");
+		int decoratorChoice = scanner.nextInt();
+		switch (decoratorChoice) {
+		case 1:
+			GoldenHat hat = new GoldenHat(choiceHat(scanner));
+			break;
+		case 2:
+			RibbonedHat hat1 = new RibbonedHat(choiceHat(scanner));
+			break;
+		case 3:
+			System.exit(0);
+			break;
+
+		}
+	}
+
+	private static IHat choiceHat(Scanner scanner) {
+		System.out.println("Which Hat do you want?");
+		System.out.println("1.Standard Hat\n2.Premium Hat\n3.exit");
+		int choice = scanner.nextInt();
+		switch(choice) {
+		case 1: IHat hat = new StandardHat();
+		        return hat;
+		case 2: IHat hat1 = new PremiumHat(); 
+				return hat1;
+		case 3: System.exit(0);break;
+		default:System.out.println("invalid option");
+		}
+		return null;
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.techlabs.structural.adapter.test;
+import com.techlabs.structural.decorator.model.;
+public class CarDecoratorTest {
+	public static void main(String[] args) {
+		
+		ICarService car = new CarInspection();
+		OilChange oil = new OliChange(car);
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.techlabs.behavioural.observer.model;
+
+public class WhatsappNotifier implements INotifier{
+
+	@Override
+	public void notification(Account account) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

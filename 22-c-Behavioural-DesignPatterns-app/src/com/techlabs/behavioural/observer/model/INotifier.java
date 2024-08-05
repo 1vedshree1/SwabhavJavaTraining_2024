@@ -1,0 +1,10 @@
+package com.techlabs.behavioural.observer.model;
+
+public interface INotifier {
+	
+public void notification(String message);
+	
+		
+	
+
+}

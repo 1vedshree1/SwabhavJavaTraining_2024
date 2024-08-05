@@ -1,0 +1,44 @@
+package com.techlabs.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TicTacToeGameTest {
+	
+	private TicTacToeGame game;
+	 IGameBoard gameBoard = new GameBoard();
+     IGameLogic gameLogic = new GameLogic();
+     IPlayer playerX = new Player("Player X", 'X');
+     IPlayer playerO = new Player("Player O", 'O');
+	
+	void init() {
+		game = new TicTacToeGame(gameBoard, gameLogic, playerX, playerO);
+	}
+
+	@Test
+	void testTicTacToeGame() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testStartGame() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testMakeMove() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testResetGame() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetCurrentPlayer() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.techlabs.model;
+
+public class Student {
+	
+	IStudentService studentService;
+	
+	public double calculatePercentage() {
+		return studentService.getToatalMarks()/studentService.getTotalNumberOfSubject();
+		
+		
+	}
+
+}

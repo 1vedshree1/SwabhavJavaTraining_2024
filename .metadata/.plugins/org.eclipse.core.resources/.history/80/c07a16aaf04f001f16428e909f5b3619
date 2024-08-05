@@ -1,0 +1,15 @@
+package com.techlabs.structural.adapter.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class ShoppingCart {
+	
+	List<IItems> cartItems = new ArrayList<IItems>();
+	Hat hat = new Hat("Cotton", "Cap", 100, 20);
+	IItems buiscuit = new Buiscuit();
+	IItems hatAdapter = new HatAdapter(hat);
+	
+
+}

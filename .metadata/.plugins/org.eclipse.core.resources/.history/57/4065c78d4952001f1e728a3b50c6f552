@@ -1,0 +1,27 @@
+package com.techlabs.model;
+
+public class Move {
+	
+	private int x;
+    private int y;
+    private char mark;
+
+    public Move(int x, int y, char mark) {
+        this.x = x;
+        this.y = y;
+        this.mark = mark;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public char getMark() {
+        return mark;
+    }
+
+}

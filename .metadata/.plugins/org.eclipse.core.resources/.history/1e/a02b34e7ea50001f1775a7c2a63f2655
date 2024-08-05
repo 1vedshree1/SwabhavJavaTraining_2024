@@ -1,0 +1,71 @@
+package com.techlabs.behavioural.observer.test;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.techlabs.behavioural.observer.model.Account;
+import com.techlabs.behavioural.observer.model.EmailNotifier;
+import com.techlabs.behavioural.observer.model.INotifier;
+import com.techlabs.behavioural.observer.model.InsufficientFundsException;
+import com.techlabs.behavioural.observer.model.WhatsappNotifier;
+
+public class AccountNotifierTest {
+	public static void main(String[] args) {
+		Account account = new Account(1,"Vedshree", 15000);
+		Scanner scanner = new Scanner(System.in);
+		    
+		    System.out.println("Which Notification do you want?\n1.Email Notification\n2.WhatsApp Notification\n3.SMS Notification\n4.exit");
+		    int chooseNotification = scanner.nextInt();
+		    switch(chooseNotification) {
+		    case 1: account.registerNotifier(new EmailNotifier());
+		    }
+		    
+			System.out.println("Choose Operation\n1.Deposit\n2.Withdraw\n3.Add Notification\n4.exit");
+			int choice = scanner.nextInt();
+			
+			while(true) {
+			switch(choice){
+			case 1:System.out.println("Enter amount:");
+			        
+					double amount1 = scanner.nextDouble();
+					account.deposit(amount1);
+					System.out.println(account);
+				    		   System.out.println("Email");
+				               account.setNotifier(List.of(new EmailNotifier()));
+				               account.getNotifier();
+				    	   
+			        break;
+			        
+			
+			case 2: System.out.println("Enter amount:");
+					try {
+					double amount2 = scanner.nextDouble();
+					account.withdraw(amount2);
+					break;
+					}
+					catch(InsufficientFundsException exception){
+						System.out.println(exception.getMessage());	
+					}
+					
+					break;
+			case 3:System.out.println("Do you want notification?\n1.Yes\2.NO");
+			       int choice1 = scanner.nextInt();
+			       while(choice1!=2){
+			    	   if(choice==1) {
+			    		   System.out.println("Email");
+			               account.setNotifier(List.of(new EmailNotifier()));
+			               break;
+			    	   }
+			        
+			      
+			       }
+			       break;
+			       
+			case 4: System.exit(0);
+			default:System.out.println("Choose valid operation");
+			}
+			}
+		}
+	}
+
+

@@ -1,0 +1,41 @@
+package com.techlabs.test;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class StringTest {
+	public static void main(String[] args) {
+		
+		List<String> names = Arrays.asList("Jayesh","Nimesh","Mark","Mahesh","Ramesh");
+		
+		List<String>name=names.stream()
+		.sorted()
+		.limit(3)
+		.collect(Collectors.toList());
+		System.out.println(name);
+		
+		List<String>Reversename=names.stream()
+				.sorted(Comparator.reverseOrder())
+				.collect(Collectors.toList());
+				System.out.println(Reversename);
+	
+		List<String>namesWitha= names.stream()
+						.filter(na -> na.contains("a"))
+						.sorted()
+						.limit(3)
+						.collect(Collectors.toList());
+						System.out.println(namesWitha);
+					
+		List<String>threeChar= names.stream()
+				.map((n1)->n1.substring(0, 3))
+				.collect(Collectors.toList());
+								System.out.println(threeChar);
+			
+			
+	
+	}
+
+}

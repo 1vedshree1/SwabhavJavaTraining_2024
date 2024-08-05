@@ -1,0 +1,7 @@
+package com.techlabs.model;
+
+public interface IGameLogic {
+	public boolean checkWin(IGameBoard gameboard, char mark);
+	public boolean checkDraw(IGameBoard gameboard);
+
+}

@@ -1,0 +1,28 @@
+package com.techlabs.creational.factory.model;
+
+public class AccountFactory {
+	
+	public static IAccount createAccount(String accountType) {
+		IAccount account = null;
+				if(accountType == "SavingAccount")
+					return account = new SavingAccount(1, "Vedshree", 15000,500);
+				    account.credit(1500);
+				    account.debit(1500);
+				    
+		        if(accountType == "SavingAccount")
+			        return account = new CurrentAccount(1, "Vedshree", 15000,500);
+		            account.credit(1500);
+			        account.debit(1500);
+		return null;
+		
+		
+		
+	}
+	public static void operations(IAccount account) {
+		account.credit(15000);
+		account.debit(50);
+		
+	}
+	
+
+}

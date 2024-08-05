@@ -1,0 +1,12 @@
+package com.techlabs.model;
+
+public interface IGameBoard {
+	
+	public void initializeBoard();
+	public void placeMark(int x, int y,char mark);
+	public boolean isCellEmpty();
+	public void printBoard();
+	
+	
+
+}

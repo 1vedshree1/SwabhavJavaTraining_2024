@@ -1,0 +1,5 @@
+package com.techlabs.structural.composit.model;
+
+public class Employee {
+
+}

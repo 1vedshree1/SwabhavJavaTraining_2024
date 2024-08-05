@@ -1,0 +1,10 @@
+package com.techlabs.behavioural.observer.test;
+
+import com.techlabs.behavioural.observer.model.Account;
+
+public class AccountNotifierTest {
+	public static void main(String[] args) {
+		Account account = new Account(0, null, 0, null)
+	}
+
+}

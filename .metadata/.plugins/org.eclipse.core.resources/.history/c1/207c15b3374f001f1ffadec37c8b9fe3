@@ -1,0 +1,17 @@
+package com.techlabs.creational.abstractfactory.test;
+import com.techlabs.creational.abstractfactory.model.IAccountFactory;
+import com.techlabs.creational.abstractfactory.model.SavingAccount;
+import com.techlabs.creational.abstractfactory.model.SavingAccountFactory;
+import com.techlabs.creational.abstractfactory.model.IAccount;
+public class AccountTest {
+	
+	public static void main(String[] args) {
+		
+		IAccountFactory saving = new SavingAccountFactory();
+		IAccount savingAccount = new SavingAccount(1, "Vedshree", 15000, 500);
+		savingAccount.credit(500);
+		savingAccount.debit(500);
+		
+	}
+
+}

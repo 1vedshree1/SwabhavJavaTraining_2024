@@ -1,0 +1,50 @@
+package com.techlabs.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class TicTacToeGameTest {
+	
+	private TicTacToeGame game;
+	
+	@BeforeEach
+	void init() {
+		
+		 IGameBoard gameBoard = new GameBoard();
+	     IGameLogic gameLogic = new GameLogic();
+	     IPlayer playerX = new Player("Player X", 'X');
+	     IPlayer playerO = new Player("Player O", 'O');
+	     game = new TicTacToeGame(gameBoard, gameLogic, playerX, playerO);
+	}
+//
+//	@Test
+//	void testTicTacToeGame() {
+//		assertArrayEqulas(game.startGame())
+//		
+//	}
+
+	@Test
+	void testStartGame() {
+		
+		 assertEquals("Game started!",game.startGame());
+		
+	}
+
+//	@Test
+//	void testMakeMove() {
+//		fail("Not yet implemented");
+//	}
+//
+	@Test
+	void testResetGame() {
+		assertEquals("Game reset!",game.resetGame());
+	}
+
+	@Test
+	void testGetCurrentPlayer() {
+		 assertEquals("Player X",game.getCurrentPlayer().getName());
+	}
+
+}

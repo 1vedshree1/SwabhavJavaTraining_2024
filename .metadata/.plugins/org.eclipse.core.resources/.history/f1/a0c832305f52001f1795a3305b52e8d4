@@ -1,0 +1,77 @@
+package com.techlabs.model;
+
+//GameLogic.java
+public class GameLogic implements IGameLogic {
+
+ @Override
+ public boolean checkWin(IGameBoard board, char mark) {
+     char[][] b = getBoardArray(board);
+    
+     return checkRows(b, mark) || checkColumns(b, mark) || checkDiagonals(b, mark);
+ }
+
+ @Override
+ public boolean checkDraw(IGameBoard board) {
+     char[][] b = getBoardArray(board);
+     return isBoardFull(b) && !isAnyWinner(b);
+ }
+
+
+ private char[][] getBoardArray(IGameBoard board) {
+	    char[][] b = new char[3][3];
+	    for (int i = 0; i < 3; i++) {
+	        for (int j = 0; j < 3; j++) {
+	            b[i][j] = board.getBoard()[i][j]; // Copy the board state
+	        }
+	    }
+	    return b;
+	}
+
+ private boolean checkRows(char[][] b, char mark) {
+     for (int i = 0; i < 3; i++) {
+         if (b[i][0] == mark && b[i][1] == mark && b[i][2] == mark) {
+             return true;
+         }
+     }
+     return false;
+ }
+
+ private boolean checkColumns(char[][] b, char mark) {
+     for (int i = 0; i < 3; i++) {
+         if (b[0][i] == mark && b[1][i] == mark && b[2][i] == mark) {
+             return true;
+         }
+     }
+     return false;
+ }
+
+ private boolean checkDiagonals(char[][] b, char mark) {
+     if (b[0][0] == mark && b[1][1] == mark && b[2][2] == mark) {
+         return true;
+     }
+     if (b[0][2] == mark && b[1][1] == mark && b[2][0] == mark) {
+         return true;
+     }
+     return false;
+ }
+
+ private boolean isBoardFull(char[][] b) {
+     for (int i = 0; i < 3; i++) {
+         for (int j = 0; j < 3; j++) {
+             if (b[i][j] == '-') {
+                 return false;
+             }
+         }
+     }
+     return true;
+ }
+
+ private boolean isAnyWinner(char[][] b) {
+     return checkRows(b, 'X') || checkColumns(b, 'X') || checkDiagonals(b, 'X') ||
+            checkRows(b, 'O') || checkColumns(b, 'O') || checkDiagonals(b, 'O');
+ }
+
+
+}
+
+

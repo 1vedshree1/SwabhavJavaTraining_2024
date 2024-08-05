@@ -1,0 +1,11 @@
+package com.techlabs.creational.factory.model;
+
+public interface IAccount {
+	public static final int accountNumber = 0;
+	public static final String name = "";
+	public static final double balance = 0;
+	
+	public void credit(double amount);
+	public void debit(double amount);
+
+}

@@ -1,0 +1,13 @@
+package com.techlabs.creational.abstractfactory.model;
+
+public class SavingAccountFactory implements IAccountFactory {
+
+	@Override
+	public IAccount getAccount() {
+		// TODO Auto-generated method stub
+		return new SavingAccount(1, "Vedshree", 15000, 500);
+	}
+	
+	
+
+}

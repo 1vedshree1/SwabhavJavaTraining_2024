@@ -1,0 +1,15 @@
+package com.techlabs.model;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Inventory {
+	private List guitars;
+	
+	public Inventory() {
+		guitars = new LinkedList();
+	}
+public void addGuitars (String serialNumber, double price, GuitarSpec spec) {
+	Guitar guitar = new Guitar(serialNumber, price, spec );
+}
+}

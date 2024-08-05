@@ -1,0 +1,11 @@
+package com.techlabs.structural.decorator.model;
+
+public abstract class HatDecorator implements IHat{
+	
+	IHat hat;
+	HatDecorator(IHat hat){
+		this.hat = hat;
+	}
+
+
+}

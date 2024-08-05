@@ -1,0 +1,5 @@
+package com.techlabs.dip.solution.test;
+
+public class TaxCalculatorTest {
+
+}

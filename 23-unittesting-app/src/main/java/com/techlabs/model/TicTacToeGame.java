@@ -1,0 +1,60 @@
+package com.techlabs.model;
+
+public class TicTacToeGame {
+    private IGameBoard gameBoard;
+    private IGameLogic gameLogic;
+    private IPlayer playerX;
+    private IPlayer playerO;
+    private IPlayer currentPlayer;
+
+    public TicTacToeGame(IGameBoard gameBoard, IGameLogic gameLogic, IPlayer playerX, IPlayer playerO) {
+        this.gameBoard = gameBoard;
+        this.gameLogic = gameLogic;
+        this.playerX = playerX;
+        this.playerO = playerO;
+        this.currentPlayer = playerX; 
+    }
+
+    public String startGame() {
+        gameBoard.initializeBoard();
+        System.out.println("Game started!");
+        return "Game started!";
+    }
+
+    public String makeMove(int x, int y) {
+        if (gameBoard.isCellEmpty(x, y)) {
+            gameBoard.placeMark(x, y, currentPlayer.getMark());
+            
+            if (gameLogic.checkWin(gameBoard, currentPlayer.getMark())) {
+                System.out.println(currentPlayer.getName() + " wins!");
+                return currentPlayer.getName() + " wins!"; 
+            } else if (gameLogic.checkDraw(gameBoard)) {
+                System.out.println("The game is a draw!");
+                return "The game is a draw!"; 
+            }
+           
+            currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
+            return Character.toString(currentPlayer.getMark()); 
+        } 
+       
+        else {
+            System.out.println("Cell is already occupied!");
+            
+        }
+        return Character.toString(currentPlayer.getMark()); 
+
+
+		    }
+    
+
+    public String resetGame() {
+        gameBoard.initializeBoard();
+        currentPlayer = playerX; 
+        System.out.println("Game reset!");
+        return "Game reset!";
+    }
+
+    public IPlayer getCurrentPlayer() {
+        return currentPlayer;
+    }
+}

@@ -1,0 +1,46 @@
+package com.techlabs.test;
+
+import com.techlabs.model.TicTacToeGame;
+import com.techlabs.model.*;
+public class TicTacToeGameTest {
+	
+	
+	    public static void main(String[] args) {
+	      
+	        IGameBoard gameBoard = new GameBoard();
+	        IGameLogic gameLogic = new GameLogic();
+	        IPlayer playerX = new Player("Player X", 'X');
+	        IPlayer playerO = new Player("Player O", 'O');
+	        
+	       
+	        TicTacToeGame game = new TicTacToeGame(gameBoard, gameLogic, playerX, playerO);
+	        
+	      
+	        game.startGame();
+	        gameBoard.printBoard();
+	        
+	        
+	        game.makeMove(0, 0); // Player X
+	        gameBoard.printBoard();
+        
+        game.makeMove(1, 1); // Player O
+	        gameBoard.printBoard();
+        
+	        game.makeMove(0, 1); // Player X
+	        gameBoard.printBoard();
+	        
+	        game.makeMove(1, 2); // Player O
+	        gameBoard.printBoard();
+	        
+	        game.makeMove(0, 2); // Player X - This move should win the game
+	        
+	      
+	        gameBoard.printBoard();
+	        
+	       
+	        game.resetGame();
+	        gameBoard.printBoard();
+	    }
+	}
+
+

@@ -1,0 +1,61 @@
+package com.techlabs.test;
+
+import com.techlabs.model.TicTacToeGame;
+
+import java.util.Scanner;
+
+import com.techlabs.model.*;
+public class TicTacToeGameTest {
+	
+	
+	    public static void main(String[] args) {
+	      
+	    	IGameBoard gameBoard = new GameBoard();
+	        IGameLogic gameLogic = new GameLogic();
+	        IPlayer playerX = new Player("Player X", 'X');
+	        IPlayer playerO = new Player("Player O", 'O');
+
+	        // Create the TicTacToeGame object
+	        TicTacToeGame game = new TicTacToeGame(gameBoard, gameLogic, playerX, playerO);
+
+	        Scanner scanner = new Scanner(System.in);
+	        boolean isGameRunning = true;
+	        
+	        // Start the game
+	        game.startGame();
+	        gameBoard.printBoard();
+
+	        while (isGameRunning) {
+	            IPlayer currentPlayer = game.getCurrentPlayer();
+	            System.out.println(currentPlayer.getName() + "'s turn. Enter row and column (0, 1, or 2) separated by a space:");
+	            int row = scanner.nextInt();
+	            int col = scanner.nextInt();
+
+	            // Make the move
+	            game.makeMove(row, col);
+	            gameBoard.printBoard();
+
+	            // Check game status
+	            if (gameLogic.checkWin(gameBoard, currentPlayer.getMark())) {
+	                System.out.println(currentPlayer.getName() + " wins!");
+	                isGameRunning = false;
+	            } else if (gameLogic.checkDraw(gameBoard)) {
+	            	
+	                System.out.println("The game is a draw!");
+	                isGameRunning = false;
+	            }
+	        }
+
+	        // Ask if the user wants to play again
+	        System.out.println("Game over. Do you want to play again? (yes/no)");
+	        String playAgain = scanner.next();
+	        if (playAgain.equalsIgnoreCase("yes")) {
+	            game.resetGame();
+	            gameBoard.printBoard();
+	            // Optionally, restart the game loop here if you want continuous play
+	        }
+
+	        scanner.close();
+	    }
+}
+

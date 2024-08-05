@@ -1,0 +1,9 @@
+package com.techlabs.structural.decorator.model;
+
+public interface IHat {
+	
+	public void getName();
+	public void getPrice();
+	public void getDescription();
+
+}

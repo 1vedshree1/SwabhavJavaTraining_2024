@@ -1,0 +1,35 @@
+package com.techlabs.model;
+
+public class GameBoard implements IGameBoard{
+
+	private char[][] gameBoard = new char[3][3];
+	@Override
+	public void initializeBoard() {
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				gameBoard[i][j]= ' ';
+			}
+		}
+		
+	}
+
+	@Override
+	public void placeMark(int x, int y, char mark) {
+		
+		
+		
+	}
+
+	@Override
+	public void isCellEmpty() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void printBoard() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

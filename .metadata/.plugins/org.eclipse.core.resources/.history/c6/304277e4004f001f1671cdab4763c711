@@ -1,0 +1,26 @@
+package com.techlabs.creational.factory.model;
+
+public class CarFactory {
+	
+	
+	
+	public static ICar makeCar(String carName) {
+		ICar car = null;
+		if(carName=="Maruti")
+			return car= new Maruti();
+			car.start();car.stop();
+		
+		if(carName=="Tata")
+			return car = new Tata();
+		if(carName=="Mahindra")
+			return car = new Mahindra();
+		
+		return car;
+		
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,12 @@
+package com.techlabs.structural.facade.model;
+
+public interface DVDPlayer {
+	
+	public static void on() {
+		System.out.println("DVD player is on");
+	}
+	public void off() {
+		System.out.println();
+	}
+
+}

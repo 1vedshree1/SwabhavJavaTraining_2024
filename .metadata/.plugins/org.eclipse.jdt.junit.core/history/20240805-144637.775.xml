@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TicTacToeGameTest (1)" project="23-unittesting-app" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.techlabs.model.TicTacToeGameTest" time="0.047" displayname="TicTacToeGameTest" uniqueid="[engine:junit-jupiter]/[class:com.techlabs.model.TicTacToeGameTest]">
+    <testcase name="testResetGame" classname="com.techlabs.model.TicTacToeGameTest" time="0.043" displayname="testResetGame()" uniqueid="[engine:junit-jupiter]/[class:com.techlabs.model.TicTacToeGameTest]/[method:testResetGame()]"/>
+    <testcase name="testStartGame" classname="com.techlabs.model.TicTacToeGameTest" time="0.001" displayname="testStartGame()" uniqueid="[engine:junit-jupiter]/[class:com.techlabs.model.TicTacToeGameTest]/[method:testStartGame()]"/>
+    <testcase name="testGetCurrentPlayer" classname="com.techlabs.model.TicTacToeGameTest" time="0.001" displayname="testGetCurrentPlayer()" uniqueid="[engine:junit-jupiter]/[class:com.techlabs.model.TicTacToeGameTest]/[method:testGetCurrentPlayer()]"/>
+    <testcase name="testMakeMove" classname="com.techlabs.model.TicTacToeGameTest" time="0.001" displayname="testMakeMove()" uniqueid="[engine:junit-jupiter]/[class:com.techlabs.model.TicTacToeGameTest]/[method:testMakeMove()]"/>
+  </testsuite>
+</testrun>

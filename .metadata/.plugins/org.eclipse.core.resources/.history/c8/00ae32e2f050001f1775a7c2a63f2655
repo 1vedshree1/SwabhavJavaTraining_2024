@@ -1,0 +1,11 @@
+package com.techlabs.behavioural.observer.model;
+
+public class EmailNotifier implements INotifier{
+
+	@Override
+	public String notification(Account account) {
+		
+		return "Email Notifier";
+	}
+
+}
